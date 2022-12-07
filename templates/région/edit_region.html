@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>modifier une région</title>
+{% endblock %}
+
+{% block body %}
+  <h2>modifier une region</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method="post" action="/région/edit">
+    <fieldset>
+        <legend> Modifier une regions</legend>
+        <input type="hidden" name="id" size="18" value="{{ région.id }}" id="id">
+        <label for="nom_region">nom de la région</label><br>
+        <input type="text" name="nom_region" size="18" value="{{ région.nom_region }}" id="nom_region"><br>
+        <input type="submit" value="Modifier" name="Modifier" >
+    </fieldset>
+  </form>
+{% endblock %}

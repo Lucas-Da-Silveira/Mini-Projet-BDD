@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Ajouter un club</title>
+{% endblock %}
+
+{% block body %}
+  <h2>Ajout d'un club</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+    <form method="post" action="/club/add" >
+      <fieldset>
+        <legend> Créer un club</legend>
+        <label for="nom">Nom</label><br>
+        <input id="nom" type="text" name="nom" size="18" value="" placeholder="Nom club" required><br>
+          <label for="région_id">Région</label><br>
+        <select name="région_id" required>
+            <option value="">Sélectionner une région</option>
+            {% for type in régions %}
+            <option value="{{ type.id }}"> {{ type.nom_region }} </option>
+            {% endfor %}
+        </select><br>
+          <label for="nb_adherent">Nombre d'adherent</label><br>
+        <input id="nb_adherent" type="text" name="nb_adherent" size="18" value="" placeholder="Nombre adhérent" required><br>
+          <label for="date_creation">Date de création</label><br>
+        <input id="date_creation" type="text" name="date_creation" size="18" value="" placeholder="Date création" required><br>
+          <label for="prix_cotisation">Prix de la cotisation</label><br>
+        <input id="prix_cotisation" type="text" name="prix_cotisation" size="18" value="" placeholder="Prix cotisation" required><br>
+          <label for="image">Image</label><br>
+        <input id="image" type="file" name="image" size="18" value="" placeholder="Image"><br>
+        <input type="submit" value="Creer" name="Valider" >
+      </fieldset>
+
+
+  </form>
+
+{% endblock %}

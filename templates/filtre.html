@@ -1,0 +1,205 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h3>Les filtres</h3>
+    <br>
+    <form>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Entrez le nom du club</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Recherche">
+    </div>
+    <hr>
+    <h4>Régions</h4>
+    <br>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        FrancheComte
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        IleDeFrance
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Bretagne
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Occitanie
+      </label>
+    </div>
+        <br>
+    <div class="row g-2">
+        <p>Prix :</p>
+      <div class="col-sm">
+        <input type="text" class="form-control" placeholder="Min" aria-label="Min">
+      </div>
+      <div class="col-sm">
+        <input type="text" class="form-control" placeholder="Max" aria-label="Max">
+      </div>
+    </div>
+    <br>
+        <button class="btn btn-light" type="submit">Submit form</button>
+    </form>
+    <hr>
+
+    <h4>Clubs</h4>
+    <br>
+            <div class="card-group">
+          <div class="card">
+              <h5 class="card-title">BelfortEchecs</h5>
+              <h6>100 €</h6>
+            <img src="/static/images/BelfortEchecs.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 67</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création : 1977-01-31</small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">EchiquierQuimpérois</h5>
+              <h6>90 €</h6>
+            <img src="/static/images/EchiquierQuimpérois.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 36 </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création :1983-06-27 </small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">TremblayEnFrance</h5>
+              <h6>50 €</h6>
+            <img src="/static/images/TremblayEnFrance.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 109</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création : 1982-03-05</small>
+            </div>
+          </div>
+        </div>
+
+            <br>
+
+                <div class="card-group">
+          <div class="card">
+              <h5 class="card-title">EchiquierLedonien</h5>
+              <h6>71 €</h6>
+            <img src="/static/images/EchiquierLedonien.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 25</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création : 1966-06-12</small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">EchiquierNimois</h5>
+              <h6>120 €</h6>
+            <img src="/static/images/EchiquierNimois.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 85</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création :1987-03-21 </small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">LuteceEchecs</h5>
+              <h6>420 €</h6>
+            <img src="/static/images/LuteceEchecs.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 89</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création :1957-08-05 </small>
+            </div>
+          </div>
+        </div>
+
+            <br>
+
+                <div class="card-group">
+          <div class="card">
+              <h5 class="card-title">UsamEchiquierBrestois</h5>
+              <h6>100 €</h6>
+            <img src="/static/images/UsamEchiquierBrestois.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Nombre d'adhérents : 73</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création : 1964-06-25</small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">EchecsClubMontpellier</h5>
+              <h6>85 €</h6>
+            <img src="/static/images/EchecsClubMontpellier.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 119</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création : 1981-04-15</small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">ClichyEchecs92</h5>
+              <h6>189 €</h6>
+            <img src="/static/images/ClichyEchecs92.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 85</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création : 1961-10-07</small>
+            </div>
+          </div>
+        </div>
+
+            <br>
+                <div class="card-group">
+          <div class="card">
+              <h5 class="card-title">RoiBlancMontbéliard</h5>
+              <h6>76 €</h6>
+            <img src="/static/images/RoiBlancMontbeliard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Nombre d'adhérents : 31</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Date de création : 1950-02-10</small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">EcgiquierToulousain</h5>
+              <h6>140 €</h6>
+            <img src="/static/images/EchiquierToulousain.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Nombre d'adhérents : 88</p>
+            </div>
+             <div class="card-footer">
+              <small class="text-muted">Date de création :1978-03-18 </small>
+            </div>
+          </div>
+          <div class="card">
+              <h5 class="card-title">RennesPaulBert</h5>
+              <h6>115 €</h6>
+            <img src="/static/images/RennesPaulBert.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Nombre d'adhérents : 89</p>
+            </div>
+             <div class="card-footer">
+              <small class="text-muted">Date de création :1959-10-07 </small>
+            </div>
+          </div>
+        </div>
+
+
+{% endblock %}

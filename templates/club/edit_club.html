@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Modifier un club</title>
+{% endblock %}
+
+{% block body %}
+  <h2>Modifier un club</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method="post" action="/club/edit">
+    <fieldset>
+        <legend> Modifier un club</legend>
+        <input type="hidden" name="id" size="18" value="{{ club.id }}" id="id">
+        <label for="nom">Nom</label><br>
+        <input type="text" name="nom" size="18" value="{{ club.nom}}" id="nom"><br>
+        <label for="région_id">Région</label><br>
+        <select name="région_id" required>
+            {% for type in régions %}
+                <option value="{{ type.id }}"
+                {% if club.région_id is defined and type.id ==  club.région_id %}selected{% endif %}
+                > {{ type.nom_region }} </option>
+            {% endfor %}
+        </select><br>
+        <label for="nb_adherent">Nombre d'adhérent</label><br>
+        <input type="text" name="nb_adherent" size="18" value="{{ club.nb_adherent }}" id="nb_adherent"><br>
+        <label for="date_creation">Date de création</label><br>
+        <input type="text" name="date_creation" size="18" value="{{ club.date_creation }}" id="date_creation"><br>
+        <label for="prix_cotisation">Prix de la cotisation</label><br>
+        <input type="text" name="prix_cotisation" size="18" value="{{ club.prix_cotisation }}" id="prix_cotisation"><br>
+        <label for="image">Image</label><br>
+        <input type="file" name="image" size="18" value="{{ club.image }}" id="image"><br>
+
+        <input type="submit" value="Modifier" name="Modifier" >
+
+
+    </fieldset>
+  </form>
+{% endblock %}

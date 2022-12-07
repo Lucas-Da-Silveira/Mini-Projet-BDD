@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>afficher les clubs</title>
+{% endblock %}
+
+{% block body %}
+<h3>Clubs</h3>
+<a href="/club/add">ajouter un club</a>
+<br><br>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>id</th><th>nom</th><th>nombres d'adherents</th><th>date de création</th><th>prix cotisation</th><th>région</th><th>opération</th><th>image</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if clubs | length >= 1 %}
+        {% for ligne in clubs %}
+           <tr>
+                  <td>{{ ligne.id }}</td>
+                    <td>{{ ligne.nom }}</td>
+                    <td>{{ ligne.nb_adherent }}</td>
+                    <td>{{ ligne.date_creation }}</td>
+                    <td>{{ ligne.prix_cotisation }}</td>
+                    <td>{{ ligne.region_id }}</td>
+                  <td>
+                      <a href="/club/edit?id={{ ligne.id }}&amp;param2={{ligne.nom_region}}">editer</a>&nbsp;
+                      <a href="/club/delete?id={{ ligne.id }}" >supprimer</a>
+                  </td>
+                  <td>
+                      {%  if ligne.image is not none %}
+                        <img style="width:40px;height:40px"  src="{{ url_for('static', filename = 'images/' + ligne['image']) }}"  alt="image  de {{ ligne.nom }}" >
+                        {% else %}
+                        <img style="width:40px;height:40px"   src="{{ url_for('static', filename='images/no_photo.jpeg')}}"  alt="no image" >
+                    {% endif %}
+                </td>
+
+           </tr>
+        {% endfor %}
+    {% else %}
+            <tr>
+                  <td>
+                      pas de clubs
+                  </td>
+           </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}

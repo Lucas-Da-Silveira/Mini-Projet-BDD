@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>ajouter une région</title>
+{% endblock %}
+
+{% block body %}
+  <h2>ajout d'une région</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method="post" action="/région/add" >
+    <fieldset>
+        <legend> Créer une région</legend>
+        <label for="nom_region">Nom</label><br>
+        <input id="nom_region" type="text" name="nom_region" size="18" value="" placeholder="Saisir le nom de la région"><br>
+        <input type="submit" value="Creer" name="Valider" >
+    </fieldset>
+  </form>
+{% endblock %}

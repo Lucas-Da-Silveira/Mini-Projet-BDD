@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>afficher les régions</title>
+{% endblock %}
+
+{% block body %}
+<h3>Régions</h3>
+<a href="/région/add">ajouter une région</a>
+<br><br>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>id</th><th>nom</th><th>opération</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if régions | length >= 1 %}
+        {% for ligne in régions %}
+           <tr>
+                  <td>{{ ligne.id }}</td>
+                  <td>{{ ligne.nom_region }}</td>
+                  <td>
+                      <a href="/région/edit?id={{ ligne.id }}&amp;param2={{ligne.libelle}}">editer</a>&nbsp;
+                      <a href="/région/delete?id={{ ligne.id }}" >supprimer</a>
+                  </td>
+           </tr>
+        {% endfor %}
+    {% else %}
+            <tr>
+                  <td>
+                      pas de régions
+                  </td>
+           </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}
